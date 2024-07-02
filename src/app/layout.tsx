@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
+import localFont from "next/font/local";
+import { cx } from "@/shared/utils";
 
-const inter = Inter({ subsets: ["latin"] });
+const dos = localFont({
+  src: "../shared/assets/fonts/ModernDOS8x16.ttf",
+  variable: "--font-dos",
+  fallback: ["Courier New", "Courier", "monospace"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="min-h-screen">
+      <body className={cx("min-h-screen", dos.className)}>{children}</body>
     </html>
   );
 }
