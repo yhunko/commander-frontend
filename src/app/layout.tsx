@@ -20,8 +20,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="min-h-screen">
-      <body className={cx("min-h-screen", dos.className)}>{children}</body>
+    <html
+      lang="en"
+      className="flex min-h-screen items-center justify-center bg-secondary"
+    >
+      <body
+        className={cx(
+          "flex h-full min-h-screen w-full max-w-screen-xl flex-col",
+          dos.className,
+        )}
+      >
+        {children}
+      </body>
     </html>
   );
 }

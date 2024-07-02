@@ -6,6 +6,8 @@ const config: Config = {
     extend: {
       colors: {
         primary: "#159b9a",
+        primaryLight: "#4dfffe",
+        blue: "#000099",
         secondary: "#000",
       },
       fontFamily: {
