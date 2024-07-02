@@ -43,7 +43,7 @@ function renderItem(item: CommanderTitleBarItem) {
         </MenuButton>
 
         <MenuItems
-          anchor="bottom end"
+          anchor="bottom start"
           className="w-max min-w-60 max-w-full bg-primary p-1"
         >
           <div className="flex w-full flex-col items-start gap-0 border-2 border-secondary px-1 py-0.5">
