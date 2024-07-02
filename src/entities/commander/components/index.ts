@@ -1,3 +1,2 @@
-export * from "./DirectoryFilesList";
+export * from "./FilesList";
 export * from "./DirectoriesList";
-export * from "./DropCapLetter";

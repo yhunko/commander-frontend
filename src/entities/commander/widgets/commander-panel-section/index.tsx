@@ -9,7 +9,7 @@ export const CommanderPanelSection: FC<
 > = ({ title, children }) => {
   return (
     <div className="flex flex-col items-center">
-      <span className="text-lg text-yellow-400">{title}</span>
+      <h2 className="text-lg text-yellow-400">{title}</h2>
 
       {children}
     </div>

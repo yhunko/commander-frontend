@@ -5,6 +5,7 @@ export type DropCapLetterProps = {
   children?: (dropCappedValue: ReactNode) => ReactNode;
 };
 
+// Name comes from: https://fonts.google.com/knowledge/glossary/drop_cap
 export const DropCapLetter: FC<DropCapLetterProps> = ({ value, children }) => {
   const [firstLetter, ...rest] = value;
 
@@ -15,7 +16,5 @@ export const DropCapLetter: FC<DropCapLetterProps> = ({ value, children }) => {
     </span>
   );
 
-  if (children) return children(dropCappedString);
-
-  return dropCappedString;
+  return children?.(dropCappedString) ?? dropCappedString;
 };

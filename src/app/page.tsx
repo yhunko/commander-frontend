@@ -2,13 +2,13 @@ import {
   CommanderTitleBar,
   CommanderPanel,
   CommanderPanelFooter,
-  CommanderActionBar,
+  CommanderCommandBar,
   CommanderActions,
   commanderTitleBarItems,
   commanderActions,
   directoryListItems,
   CommanderPanelSection,
-  DirectoryFilesList,
+  FilesList,
   DirectoriesList,
   directoriesList,
 } from "@/entities/commander";
@@ -18,7 +18,7 @@ export default function Home() {
     <>
       <CommanderTitleBar items={commanderTitleBarItems} />
 
-      <main className="bg-blue grid grow grid-cols-1 gap-1 pb-0.5 md:grid-cols-2">
+      <main className="grid grow grid-cols-1 gap-1 bg-blue pb-0.5 md:grid-cols-2">
         <CommanderPanel
           title="Directories"
           Footer={
@@ -36,19 +36,20 @@ export default function Home() {
               <span>DN</span>
             </CommanderPanelFooter>
           }
-          className="divide-primaryLight grid grid-cols-3 divide-x-2"
+          className="grid grid-cols-3 divide-x-2 divide-primaryLight"
         >
           <CommanderPanelSection title="Name">
-            <DirectoryFilesList dir="DN" items={directoryListItems} />
+            <FilesList dir="DN" items={directoryListItems} />
           </CommanderPanelSection>
           <CommanderPanelSection title="Name" />
           <CommanderPanelSection title="Name" />
         </CommanderPanel>
       </main>
 
-      <CommanderActionBar
-        Actions={<CommanderActions data={commanderActions} />}
-      />
+      <footer className="flex w-full flex-col bg-secondary text-gray-300">
+        <CommanderCommandBar />
+        <CommanderActions data={commanderActions} />
+      </footer>
     </>
   );
 }

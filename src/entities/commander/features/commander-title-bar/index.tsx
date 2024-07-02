@@ -6,7 +6,8 @@ import {
   MenuItems,
   MenuItem,
 } from "@headlessui/react";
-import { DropCapLetter } from "../../components";
+import { DropCapLetter } from "@/shared/components";
+import { cx } from "@/shared/utils";
 
 export type CommanderTitleBarItem = {
   title: string;
@@ -26,11 +27,18 @@ export const CommanderTitleBar: FC<CommanderTitleBarProps> = ({ items }) => {
   );
 };
 
+const SHARED_BUTTON_CLASSES = "px-2 hover:bg-secondary hover:text-white";
+
 function renderItem(item: CommanderTitleBarItem) {
   if (!!item.children?.length) {
     return (
       <Menu>
-        <MenuButton className="px-2 hover:bg-secondary hover:text-white data-[open]:bg-secondary data-[open]:text-white">
+        <MenuButton
+          className={cx(
+            SHARED_BUTTON_CLASSES,
+            "data-[open]:bg-secondary data-[open]:text-white",
+          )}
+        >
           <DropCapLetter value={item.title} />
         </MenuButton>
 
@@ -55,7 +63,7 @@ function renderItem(item: CommanderTitleBarItem) {
   }
 
   return (
-    <Button className="px-2 hover:bg-secondary hover:text-white">
+    <Button className={SHARED_BUTTON_CLASSES}>
       <DropCapLetter value={item.title} />
     </Button>
   );

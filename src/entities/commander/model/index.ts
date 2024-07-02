@@ -1,6 +1,5 @@
 import { CommanderTitleBarItem, CommanderAction } from "../features";
-import { DirectoryFilesListItem } from "../components/DirectoryFilesList";
-import { DirectoriesListItem } from "../components";
+import { FilesListItem, DirectoriesListItem } from "../components";
 
 export const commanderTitleBarItems: CommanderTitleBarItem[] = [
   {
@@ -57,7 +56,7 @@ export const commanderActions: CommanderAction[] = [
   },
 ];
 
-export const directoryListItems: DirectoryFilesListItem[] = [
+export const directoryListItems: FilesListItem[] = [
   {
     name: "autoexec",
     ext: "bat",

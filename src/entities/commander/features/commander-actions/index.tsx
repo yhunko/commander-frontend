@@ -16,7 +16,7 @@ export const CommanderActions: FC<CommanderActionsProps> = ({ data }) => {
         <Button
           key={title}
           as="kbd"
-          tabIndex={index + 1}
+          tabIndex={0}
           className="flex w-full items-center font-dos text-lg"
         >
           <span className="leading-none">{index + 1}</span>

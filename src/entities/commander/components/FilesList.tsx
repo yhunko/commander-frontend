@@ -1,20 +1,17 @@
 import { FC } from "react";
 import { Button } from "@headlessui/react";
 
-export type DirectoryFilesListItem = {
+export type FilesListItem = {
   name: string;
   ext?: string;
 };
 
-type DirectoryFileListProps = {
+type FilesListProps = {
   dir: string;
-  items: DirectoryFilesListItem[];
+  items: FilesListItem[];
 };
 
-export const DirectoryFilesList: FC<DirectoryFileListProps> = ({
-  dir,
-  items,
-}) => {
+export const FilesList: FC<FilesListProps> = ({ dir, items }) => {
   return (
     <ul className="m-0 w-full p-0">
       <li key={`dir-${dir}`}>{dir}</li>
@@ -22,7 +19,7 @@ export const DirectoryFilesList: FC<DirectoryFileListProps> = ({
         <Button
           as="li"
           key={`${name}-${ext}`}
-          className="hover:bg-primaryLight hover:text-blue flex w-full cursor-pointer items-center justify-between leading-none"
+          className="flex w-full cursor-pointer items-center justify-between leading-none hover:bg-primaryLight hover:text-blue"
         >
           <span>{name}</span>
 
