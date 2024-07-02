@@ -1,5 +1,6 @@
 import { CommanderTitleBarItem, CommanderAction } from "../features";
-import { DirectoryListItem } from "../components/DirectoryList";
+import { DirectoryFilesListItem } from "../components/DirectoryFilesList";
+import { DirectoriesListItem } from "../components";
 
 export const commanderTitleBarItems: CommanderTitleBarItem[] = [
   {
@@ -56,7 +57,7 @@ export const commanderActions: CommanderAction[] = [
   },
 ];
 
-export const directoryListItems: DirectoryListItem[] = [
+export const directoryListItems: DirectoryFilesListItem[] = [
   {
     name: "autoexec",
     ext: "bat",
@@ -80,5 +81,24 @@ export const directoryListItems: DirectoryListItem[] = [
   {
     name: "msdod",
     ext: "sys",
+  },
+];
+
+export const directoriesList: DirectoriesListItem[] = [
+  {
+    name: "tools",
+  },
+  {
+    name: "xtgold",
+  },
+  {
+    name: "laplink",
+  },
+  {
+    name: "dn",
+    selected: true,
+  },
+  {
+    name: "dev",
   },
 ];

@@ -1,17 +1,20 @@
 import { FC } from "react";
 import { Button } from "@headlessui/react";
 
-export type DirectoryListItem = {
+export type DirectoryFilesListItem = {
   name: string;
   ext?: string;
 };
 
-type DirectoryListProps = {
+type DirectoryFileListProps = {
   dir: string;
-  items: DirectoryListItem[];
+  items: DirectoryFilesListItem[];
 };
 
-export const DirectoryList: FC<DirectoryListProps> = ({ dir, items }) => {
+export const DirectoryFilesList: FC<DirectoryFileListProps> = ({
+  dir,
+  items,
+}) => {
   return (
     <ul className="m-0 w-full p-0">
       <li key={`dir-${dir}`}>{dir}</li>

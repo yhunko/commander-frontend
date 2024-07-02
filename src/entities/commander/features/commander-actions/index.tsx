@@ -11,9 +11,10 @@ type CommanderActionsProps = {
 
 export const CommanderActions: FC<CommanderActionsProps> = ({ data }) => {
   return (
-    <div className="flex w-full max-w-screen-xl flex-row items-center justify-evenly gap-2">
+    <div className="flex w-full max-w-screen-xl flex-row flex-wrap items-center justify-start gap-2 md:w-full md:flex-nowrap md:justify-evenly">
       {data.map(({ title }, index) => (
         <Button
+          key={title}
           as="kbd"
           tabIndex={index + 1}
           className="flex w-full items-center font-dos text-lg"
